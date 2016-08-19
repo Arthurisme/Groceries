@@ -1,0 +1,27 @@
+
+
+<StackLayout *ngIf="orientationIsPort">
+    <Label text="Port" class="title"></Label>
+    <Label text="Tap the button port" class="title"></Label>
+
+    <Button text="TAP" (tap)="onTap()"></Button>
+
+    <Label [text]="message" class="message" textWrap="true"></Label>
+    <Label [text]="screenWidth" class="message" textWrap="true"></Label>
+    <Label [text]="screenHeight" class="message" textWrap="true"></Label>
+    <Label [text]="orientationIsPort" class="message" textWrap="true"></Label>
+</StackLayout>
+
+
+<StackLayout *ngIf="!orientationIsPort">
+    <Label text="Land" class="title"></Label>
+    <Label text="Tap the button land" class="title"></Label>
+
+    <Button text="TAP" (tap)="onTap()"></Button>
+
+    <Label [text]="message" class="message" textWrap="true"></Label>
+    <Label [text]="screenWidth" class="message" textWrap="true"></Label>
+    <Label [text]="screenHeight" class="message" textWrap="true"></Label>
+    <Label [text]="orientationIsPort" class="message" textWrap="true"></Label>
+
+</StackLayout>
