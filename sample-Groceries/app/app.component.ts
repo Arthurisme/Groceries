@@ -1,30 +1,13 @@
 import {Component} from "@angular/core";
-import {User} from "./shared/user/user"
-
+import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router";
+ 
 @Component({
-  selector: "my-app",
-  templateUrl: "pages/login/login.html",
-  styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
-})
+  selector: "main",
+  directives:[NS_ROUTER_DIRECTIVES],
+  template: "<page-router-outlet></page-router-outlet>",
+ })
 
 
 
 
-export class AppComponent {
-
-  user: User;
-  isLoggingIn = true;
-
-  constructor(){
-    this.user = new User;
-  }
-
-  submit() {
-    alert("You're using: " + this.user.email);
-  }
-
-  toggleDisplay() {
-    this.isLoggingIn = !this.isLoggingIn;
-  }
-
-}
+export class AppComponent { }

@@ -1,4 +1,4 @@
-  <StackLayout>
+  <StackLayout #container>
 
   <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
 
@@ -7,5 +7,6 @@
 
   <Button [text]="isLoggingIn ? 'Sing in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
   <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
- 
+  
+
  </StackLayout>
