@@ -38,7 +38,11 @@ export class LoginPage implements OnInit {
   }
 
   submit() {
-    // alert("You're using: " + this.user.email);
+
+    if(!this.user.isValidEmail()){
+      alert("Enter a valid email address");
+      return ;
+    }
 
     if(this.isLoggingIn){
       this.login();
