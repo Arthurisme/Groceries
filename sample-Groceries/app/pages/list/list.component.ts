@@ -14,23 +14,26 @@ import {TextField} from "ui/text-field";
 
 
 
-
 export class ListPage implements OnInit  {
 
   groceryList: Array<Grocery> = [];
   grocery: string = "";
+  isLoading = false;
+  listLoaded = false;
   @ViewChild("groceryTextField") groceryTextField: ElementRef;
 
 
   constructor(private _groceryListService:GroceryListService){}
 
   ngOnInit() {
-
+    this.isLoading = true;
     this._groceryListService.load()
     .subscribe(loadedGroceries =>{
       loadedGroceries.forEach(groceryObject =>{
         this.groceryList.unshift(groceryObject);
       });
+    this.isLoading = false;
+    this.listLoaded = true;
     });
 
     // this.groceryList.push({ name: "Apples" });
